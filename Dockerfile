@@ -70,9 +70,9 @@ RUN sed -i 's,php_admin_value open_basedir "[^"]*,&:/dev/urandom,g' /etc/httpd/c
 RUN sed -i '$a Include conf/extra/owncloud.conf' /etc/httpd/conf/httpd.conf
 
 # expose some important directories as volumes
-#VOLUME ["/usr/share/webapps/owncloud/data"]
-#VOLUME ["/etc/webapps/owncloud/config"]
-#VOLUME ["/usr/share/webapps/owncloud/apps"]
+VOLUME ["/usr/share/webapps/owncloud/data"]
+VOLUME ["/etc/webapps/owncloud/config"]
+VOLUME ["/usr/share/webapps/owncloud/apps"]
 
 # place your ssl cert files in here. name them server.key and server.crt
 #VOLUME ["/root/sslKeys"]
